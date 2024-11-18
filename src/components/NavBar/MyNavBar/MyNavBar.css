@@ -1,0 +1,24 @@
+.custom-navbar {
+  background-color: rgba(0, 0, 0, 0.9); /* Dark background */
+  padding: 2rem 0; /* Space around the logo */
+  z-index: 1030; /* Ensure it stays above other elements */
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+}
+
+.navbar-brand {
+  font-size: 1.8rem; /* Larger text for visibility */
+  color: #FF640A; /* White color for contrast */
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  text-align: center;
+  display: block; /* Ensures it takes full width for centering */
+  text-decoration: none; /* Removes underline */
+}
+
+.navbar-brand:hover {
+  color: #FF640A; /* Subtle hover effect */
+}

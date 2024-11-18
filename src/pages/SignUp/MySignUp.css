@@ -1,14 +1,16 @@
 .signup-container {
-  width: 800%;
+  width: 100%;
   max-width: 470px;
-  margin: auto;
-  position: relative;
-  top: 50%;
-  transform: translateY(-50%);
   padding: 60px 68px 40px;
   background-color: rgba(0, 0, 0, 0.9);
   color: #fff;
   box-sizing: border-box;
+
+  /* Centering the container */
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
 
 .signup-container h1 {
@@ -44,7 +46,7 @@
 }
 
 .signup-container .signup-btn:hover {
-  background: #FF640A;
+  background: #ff640a;
 }
 
 .signup-container .help-text {
@@ -54,7 +56,7 @@
 }
 
 .signup-container .help-text a {
-  color: #fff;
+  color: #ff640a;
   text-decoration: none;
 }
 
@@ -68,4 +70,8 @@
 
 body {
   background-image: url("/src/assets/images/login.png");
+  background-size: cover;
+  background-position: 100% center;
+  background-repeat: no-repeat;
 }
+

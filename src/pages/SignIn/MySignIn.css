@@ -1,3 +1,76 @@
+.signin-container {
+  width: 100%;
+  max-width: 470px;
+  padding: 60px 68px 40px;
+  background-color: rgba(0, 0, 0, 0.9);
+  color: #fff;
+  box-sizing: border-box;
+
+  /* Centering the container */
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.signin-container h1 {
+  font-size: 32px;
+  font-weight: 700;
+  margin-bottom: 28px;
+}
+
+.signin-container form {
+  display: flex;
+  flex-direction: column;
+}
+
+.signin-container input {
+  background: #333;
+  border: 0;
+  color: #fff;
+  height: 50px;
+  line-height: 50px;
+  padding: 16px 20px;
+  margin-bottom: 20px;
+}
+
+.signin-container .signin-btn {
+  background: #FF640A;
+  font-weight: 700;
+  border: none;
+  outline: none;
+  padding: 16px;
+  font-size: 16px;
+  cursor: pointer;
+  color: #dacfcf;
+}
+
+.signin-container .signin-btn:hover {
+  background: #ff640a;
+}
+
+.signin-container .help-text {
+  color: #fff;
+  font-size: 13px;
+  margin-top: 24px;
+}
+
+.signin-container .help-text a {
+  color: #ff640a;
+  text-decoration: none;
+}
+
+.signin-container .help-text a:hover {
+  text-decoration: underline;
+}
+
+.text-center {
+  text-align: center;
+}
+
 body {
-  background-image: url("./assets/images/login.png");
+  background-image: url("/src/assets/images/login.png");
+  background-size: cover;
+  background-position: 100% center;
+  background-repeat: no-repeat;
 }

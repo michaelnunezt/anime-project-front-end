@@ -2,6 +2,8 @@ import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { signup } from "../../services/userService";
 import './MySignUp.css';
+import MyFooter from "../../components/Footer/MyFooter";
+import MyNavBar from "../../components/NavBar/MyNavBar/MyNavBar";
 
 // eslint-disable-next-line react/prop-types
 const MySignUp = ({ setUser }) => {
@@ -41,45 +43,49 @@ const MySignUp = ({ setUser }) => {
   };
 
   return (
+  <>
+    <MyNavBar/>
     <main className="signup-container">
-      <h1>Sign Up</h1>
-      {message && <p style={{ color: "red" }}>{message}</p>}
-      <form onSubmit={handleSubmit}>
-        <input
-          type="email"
-          name="email"
-          placeholder="Email"
-          value={formData.email}
-          onChange={handleChange}
-        />
-        <input
-          type="password"
-          name="password"
-          placeholder="Password"
-          value={formData.password}
-          onChange={handleChange}
-        />
-        <input
-          type="password"
-          name="confirmPassword"
-          placeholder="Confirm Password"
-          value={confirmPassword}
-          onChange={handleChange}
-        />
-        <button
-          type="submit"
-          className="signup-btn"
-          disabled={isFormInvalid()}
-        >
-          Sign Up
-        </button>
-      </form>
-      <div className="help-text text-center">
-        <p>
-          Already have an account? <a href="/login">Login</a>
-        </p>
-      </div>
-    </main>
+    <h1>Sign Up</h1>
+    {message && <p style={{ color: "red" }}>{message}</p>}
+    <form onSubmit={handleSubmit}>
+      <input
+        type="email"
+        name="email"
+        placeholder="Email"
+        value={formData.email}
+        onChange={handleChange}
+      />
+      <input
+        type="password"
+        name="password"
+        placeholder="Password"
+        value={formData.password}
+        onChange={handleChange}
+      />
+      <input
+        type="password"
+        name="confirmPassword"
+        placeholder="Confirm Password"
+        value={confirmPassword}
+        onChange={handleChange}
+      />
+      <button
+        type="submit"
+        className="signup-btn"
+        disabled={isFormInvalid()}
+      >
+        Sign Up
+      </button>
+    </form>
+    <div className="help-text text-center">
+      <p>
+        Already have an account? <a href="/login">Login</a>
+      </p>
+    </div>
+  </main>
+  <MyFooter/>
+</>
   );
 };
 

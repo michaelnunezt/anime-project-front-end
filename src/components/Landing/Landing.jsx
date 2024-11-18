@@ -1,7 +1,7 @@
 import { Button, Container } from "react-bootstrap";
-import MyNavBar from "../NavBar/MyNavBar";
 import { useNavigate } from "react-router-dom";
 import './Landing.css';
+import LandingNavBar from "../NavBar/LandingNavBar/LandingNavBar";
 
 const Landing = () => {
   const navigate = useNavigate();
@@ -13,9 +13,9 @@ const Landing = () => {
   };
   return (
     <>
-      <MyNavBar className="fixed-top" />
+      <LandingNavBar/>
       <Container className="text-white d-flex flex-column  align-items-center">
-        <h1 className="text-center text-white my-5">Oriole</h1>
+        <h1 className="text-center text-white my-5">PopPlay</h1>
 
         <p>
 
