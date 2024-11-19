@@ -1,9 +1,12 @@
 import { useState } from 'react'
-import './App.css'
 import { Route, Routes, useNavigate } from 'react-router-dom';
 import MySignIn from './pages/SignIn/MySignIn';
 import MySignUp from './pages/SignUp/MySignUp';
-import { getUser, removeToken } from '../utils/auth';// import Dashboard from './components/Dashboard/Dashboard';
+import { getUser, removeToken } from '../utils/auth';
+import Dashboard from './components/Dashboard/Dashboard';
+import Landing from './components/Landing/Landing';
+import './App.css'
+
 
 const App = () => {
   const [user, setUser ] = useState(getUser());
@@ -19,9 +22,10 @@ const App = () => {
   return (
     <>
       <Routes>
-        {/* {user ? <Route path="/" element={<Dashboard user={user} />} /> : <Route path="/" element={<Landing />} />} */}
+        <Route path="/" element={<Dashboard user={user} />} />
         <Route path="/MySignIn" element={<MySignIn setUser={setUser}/>} />
         <Route path="/MySignUp" element={<MySignUp  setUser={setUser} />} />
+        <Route path="/Landing" element={<Landing user={user} />} />
         </Routes>
     </>
   );

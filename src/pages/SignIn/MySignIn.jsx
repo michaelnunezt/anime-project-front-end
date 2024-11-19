@@ -30,19 +30,20 @@ const MySignIn = ({ setUser }) => {
     }
   };
 
-  const { email, password } = formData;
+  const { username, password } = formData;
 
   return (
     <>
     <MyNavBar/>
+    <div className="my-signin-page">
     <main className="signin-container">
   <h1>Sign In</h1>
   <form onSubmit={handleSubmit}>
     <input
       type="text"
-      name="email"
-      placeholder="Email"
-      value={email}
+      name="username"
+      placeholder="Username"
+      value={username}
       onChange={handleChange}
     />
     <input
@@ -65,9 +66,9 @@ const MySignIn = ({ setUser }) => {
     </p>
   </div>
 </main>
+</div>
 <MyFooter/>
 </>
-
   );
 };
 

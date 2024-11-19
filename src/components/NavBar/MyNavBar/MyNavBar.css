@@ -10,13 +10,12 @@
 }
 
 .navbar-brand {
-  font-size: 1.8rem; /* Larger text for visibility */
-  color: #FF640A; /* White color for contrast */
-  text-transform: uppercase;
-  letter-spacing: 1.5px;
-  text-align: center;
-  display: block; /* Ensures it takes full width for centering */
-  text-decoration: none; /* Removes underline */
+  font-size: 35px;
+  font-weight: bold;
+  color: orange;
+  text-decoration: none;
+  padding-left: 10px; /* Add left padding if necessary */
+
 }
 
 .navbar-brand:hover {

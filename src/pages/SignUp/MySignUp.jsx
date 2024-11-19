@@ -50,6 +50,13 @@ const MySignUp = ({ setUser }) => {
     {message && <p style={{ color: "red" }}>{message}</p>}
     <form onSubmit={handleSubmit}>
       <input
+        type="text"
+        name="username"
+        placeholder="Username"
+        value={formData.username}
+        onChange={handleChange}
+      />
+      <input
         type="email"
         name="email"
         placeholder="Email"
@@ -61,13 +68,6 @@ const MySignUp = ({ setUser }) => {
         name="password"
         placeholder="Password"
         value={formData.password}
-        onChange={handleChange}
-      />
-      <input
-        type="password"
-        name="confirmPassword"
-        placeholder="Confirm Password"
-        value={confirmPassword}
         onChange={handleChange}
       />
       <button

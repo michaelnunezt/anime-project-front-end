@@ -1,32 +1,59 @@
-import { Swiper, SwiperSlide } from 'swiper/react';
-import 'swiper/swiper-bundle.min.css';
+import { Carousel, Card } from "react-bootstrap";
+import "./CardGrid.css";
 
-function MyCarousel() {
-  const animes = [
-    { title: "Dragonball Z", description: "Suits You", image: "https://i.ytimg.com/vi/Ao8J38fzngw/hqdefault.jpg" },
-    { title: "Fullmetal Alchemist", description: "Suits You", image: "https://www.japanpowered.com/media/images/fma-brotherhood-characters-scaled.jpg" },
+const MyCarousel = () => {
+  const popularContent = [
+    { title: "Dragon Ball Z", img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTLw1Ull7UlR8mvNhIcj3bxMuXGh262qMG2jg&s" },
+    { title: "Jujutsu Kaisen", img: "https://example.com/jujutsukaisen.jpg" },
+    { title: "Attack on Titan", img: "https://example.com/attackontitan.jpg" },
+    { title: "Naruto", img: "https://example.com/naruto.jpg" },
+    { title: "Fullmetal Alchemist", img: "https://example.com/fullmetal.jpg" },
+    { title: "Hunter x Hunter", img: "https://example.com/hunterxhunter.jpg" },
+    { title: "Haikyuu!!", img: "https://example.com/haikyuu.jpg" },
+    { title: "Vinland Saga", img: "https://example.com/vinlandsaga.jpg" },
   ];
 
+  // Split content into chunks (e.g., 4 cards per slide)
+  const chunkedContent = [];
+  const chunkSize = 4;
+
+  for (let i = 0; i < popularContent.length; i += chunkSize) {
+    chunkedContent.push(popularContent.slice(i, i + chunkSize));
+  }
+
   return (
-    <Swiper spaceBetween={50} slidesPerView={1}>
-      {animes.map((anime, index) => (
-        <SwiperSlide key={index}>
-          <div
-            className="h-96 flex flex-col justify-end p-10"
-            style={{
-              backgroundImage: `url(${anime.image})`,
-              backgroundSize: "cover",
-              backgroundPosition: "center",
-            }}
-          >
-            <h1 className="text-5xl mb-5">{anime.title}</h1>
-            <p className="mb-5">{anime.description}</p>
-            <button className="bg-red-600 text-white p-2 px-5 rounded hover:bg-red-500">Play</button>
-          </div>
-        </SwiperSlide>
-      ))}
-    </Swiper>
+    <div className="my-5">
+      <h2 className="text-white">Most Popular</h2>
+      <Carousel>
+        {chunkedContent.map((chunk, index) => (
+          <Carousel.Item key={index}>
+            <div className="d-flex justify-content-center">
+              {chunk.map((content, idx) => (
+                <Card
+                  bg="dark"
+                  text="white"
+                  key={idx}
+                  className="mx-2"
+                  style={{ minWidth: "200px", maxWidth: "250px" }}
+                >
+                  <Card.Img
+                    variant="top"
+                    src={content.img}
+                    onError={(e) => {
+                      e.target.src = "https://example.com/fallback-image.jpg"; // Fallback image
+                    }}
+                  />
+                  <Card.Body>
+                    <Card.Title className="text-center">{content.title}</Card.Title>
+                  </Card.Body>
+                </Card>
+              ))}
+            </div>
+          </Carousel.Item>
+        ))}
+      </Carousel>
+    </div>
   );
-}
+};
 
 export default MyCarousel;

@@ -1,0 +1,29 @@
+.hero-banner {
+  background-size: cover;
+  background-position: center;
+  background-image: url('/src/assets/images/Goku.jpg');
+  padding: 100px 55px;
+  color: rgb(30, 28, 26);
+  width: 100%;
+}
+.hero-content {
+  max-width: 600px; /* Limit content width to prevent stretching */
+  text-align: start; /* Align the text to the left */
+}
+
+.hero-content h1 {
+  font-size: 3rem; /* Adjust title size */
+  margin-bottom: 20px; /* Space below the title */
+}
+
+.hero-content p {
+  font-size: 1.5rem; /* Adjust description size */
+  margin-bottom: 20px; /* Space below the paragraph */
+  
+}
+
+.hero-content .btn {
+  padding: 10px 30px; /* Button padding */
+  font-size: 1.2rem; /* Adjust button font size */
+  background-color: #ff640a;
+}
