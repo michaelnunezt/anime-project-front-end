@@ -1,3 +1,16 @@
+/* Scoped background for the SignUp page */
+#signup-page {
+  height: 100vh; /* Ensures the background covers the viewport */
+  background-image: url("/src/assets/images/login.png");
+  background-size: cover;
+  background-position: 100% center;
+  background-repeat: no-repeat;
+  display: flex;
+  align-items: center; /* Centers the content vertically */
+  justify-content: center; /* Centers the content horizontally */
+}
+
+/* SignUp container styles */
 .signup-container {
   width: 100%;
   max-width: 470px;
@@ -5,12 +18,6 @@
   background-color: rgba(0, 0, 0, 0.9);
   color: #fff;
   box-sizing: border-box;
-
-  /* Centering the container */
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
 }
 
 .signup-container h1 {
@@ -67,11 +74,3 @@
 .text-center {
   text-align: center;
 }
-
-body {
-  background-image: url("/src/assets/images/login.png");
-  background-size: cover;
-  background-position: 100% center;
-  background-repeat: no-repeat;
-}
-

@@ -1,3 +1,16 @@
+/* Scoped background for the SignIn page */
+#signin-page {
+  height: 100vh; /* Ensures the entire viewport is covered */
+  background-image: url("/src/assets/images/login.png");
+  background-size: cover;
+  background-position: 100% center;
+  background-repeat: no-repeat;
+  display: flex;
+  align-items: center; /* Centers content vertically */
+  justify-content: center; /* Centers content horizontally */
+}
+
+/* Other styles for the container */
 .signin-container {
   width: 100%;
   max-width: 470px;
@@ -5,12 +18,6 @@
   background-color: rgba(0, 0, 0, 0.9);
   color: #fff;
   box-sizing: border-box;
-
-  /* Centering the container */
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
 }
 
 .signin-container h1 {
@@ -62,15 +69,4 @@
 
 .signin-container .help-text a:hover {
   text-decoration: underline;
-}
-
-.text-center {
-  text-align: center;
-}
-
-body {
-  background-image: url("/src/assets/images/login.png");
-  background-size: cover;
-  background-position: 100% center;
-  background-repeat: no-repeat;
 }

@@ -1,15 +1,19 @@
 import axios from 'axios'
 import { setToken } from '../../utils/auth'
 
-const BASE_URL = `${import.meta.env.VITE_BACK_END_SERVER_URL}/users`
+const BASE_URL = `${import.meta.env.VITE_BACK_END_URL}`
+console.log(BASE_URL);
 
 export const signup = async (formData) => {
+  console.log("sending",formData);
+  
   // Sign up a user
-  const { data } = await axios.post(`${BASE_URL}/signup`, formData)
+  const { data } = await axios.post(`${BASE_URL}/auth/sign-up`, formData)
+console.log("risposta",data);
 
   // Set the token to local storage
-  if(data.token) {
-    setToken(data.token)
+  if(data.status) {
+    alert("Registrazione riuscita ora fai il login")
   }
 
   return data
@@ -17,11 +21,11 @@ export const signup = async (formData) => {
 
 export const signIn = async (formData) => {
   // Sign up a user
-  const { data } = await axios.post(`${BASE_URL}/signIn`, formData)
+  const { data } = await axios.post(`${BASE_URL}/auth/sign-in`, formData)
 
   // Set the token to local storage
-  if(data.token) {
-    setToken(data.token)
+  if(data.access) {
+    setToken(data.access)
   }
 
   return data

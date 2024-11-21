@@ -10,9 +10,9 @@ const LandingNavBar = () => {
 
   return (
     <div className="landing-navbar">
-      <a href="/" className="logo">PopPlay</a>
+      <a href="/Landing" className="logo">PopPlay</a>
       <div className="nav-links">
-        <a href="/">Home</a>
+        <a href="/Landing">Home</a>
         <div className="dropdown">
           <a
             href="#"

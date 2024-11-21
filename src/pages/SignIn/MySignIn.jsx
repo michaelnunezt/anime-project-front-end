@@ -1,17 +1,14 @@
 import { useState } from "react";
-// import { Button } from "react-bootstrap";
 import { signIn } from "../../services/userService";
 import { useNavigate } from "react-router-dom";
-import './MySignIn.css'
+import './MySignIn.css';
 import MyFooter from "../../components/Footer/MyFooter";
 import MyNavBar from "../../components/NavBar/MyNavBar/MyNavBar";
 
-
-// eslint-disable-next-line react/prop-types
 const MySignIn = ({ setUser }) => {
   const navigate = useNavigate();
   const [formData, setFormData] = useState({
-    email: "",
+    username: "",
     password: "",
   });
 
@@ -22,11 +19,11 @@ const MySignIn = ({ setUser }) => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const { user } = await signIn(formData); // sign in
-      setUser(user); // set user to state
-      navigate("/"); // navigate to dashboard
+      const { user } = await signIn(formData);
+      setUser(user);
+      navigate("/Landing");
     } catch (error) {
-      console.log(error);
+      console.error(error);
     }
   };
 
@@ -34,41 +31,38 @@ const MySignIn = ({ setUser }) => {
 
   return (
     <>
-    <MyNavBar/>
-    <div className="my-signin-page">
-    <main className="signin-container">
-  <h1>Sign In</h1>
-  <form onSubmit={handleSubmit}>
-    <input
-      type="text"
-      name="username"
-      placeholder="Username"
-      value={username}
-      onChange={handleChange}
-    />
-    <input
-      type="password"
-      name="password"
-      placeholder="Password"
-      value={password}
-      onChange={handleChange}
-    />
-    <button
-      type="submit"
-      className="signin-btn"
-    >
-      Sign In
-    </button>
-  </form>
-  <div className="help-text text-center">
-    <p>
-      New to PopPlay? <a href="/signup">Sign up now</a>
-    </p>
-  </div>
-</main>
-</div>
-<MyFooter/>
-</>
+      <MyNavBar />
+      <div id="signin-page">
+        <main className="signin-container">
+          <h1>Sign In</h1>
+          <form onSubmit={handleSubmit}>
+            <input
+              type="text"
+              name="username"
+              placeholder="Username"
+              value={username}
+              onChange={handleChange}
+            />
+            <input
+              type="password"
+              name="password"
+              placeholder="Password"
+              value={password}
+              onChange={handleChange}
+            />
+            <button type="submit" className="signin-btn">
+              Sign In
+            </button>
+          </form>
+          <div className="help-text text-center">
+            <p>
+              New to PopPlay? <a href="/signup">Sign up now</a>
+            </p>
+          </div>
+        </main>
+      </div>
+      <MyFooter />
+    </>
   );
 };
 

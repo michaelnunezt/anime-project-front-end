@@ -4,7 +4,7 @@ const MyNavBar = () => {
   return (
     <nav className="custom-navbar">
       <div>
-        <a href="/" className="navbar-brand">
+        <a href="/Landing" className="navbar-brand">
           PopPlay
         </a>
       </div>

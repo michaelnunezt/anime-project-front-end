@@ -15,10 +15,10 @@ const Landing = () => {
   //   navigate("/signUp");
   // };
   return (
-      <div>
+      <div id="landing-page">
         <LandingNavBar />
         <HeroBanner />
-        {/* <CardGrid /> */}
+        <CardGrid />
       </div>
     );
   };
