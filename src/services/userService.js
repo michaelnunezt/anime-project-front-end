@@ -15,17 +15,20 @@ console.log("risposta",data);
   if(data.status) {
     alert("Registrazione riuscita ora fai il login")
   }
-
   return data
 }
 
 export const signIn = async (formData) => {
   // Sign up a user
   const { data } = await axios.post(`${BASE_URL}/auth/sign-in`, formData)
+console.log(data);
+localStorage.setItem("token",data.data.access)
+console.log(data.data.access);
 
   // Set the token to local storage
-  if(data.access) {
-    setToken(data.access)
+  if(data.data.access) {
+    setToken(data.data.access)
+    
   }
 
   return data

@@ -1,22 +1,21 @@
-import Form from "react-bootstrap/Form";
-import Button from "react-bootstrap/Button";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { getToken } from "../../../utils/auth";
-import { fetchAnimeList } from "../../services/animeListService";
+import { Button, Form } from "react-bootstrap";
 
-const CreateComment = ({ id, fetchCommentList }) => {
+
+const EditComment=({id,fetchCommentList})=>{
   const [content, setContent] = useState("");
   const takeToken = getToken();
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    fetchCreateComment(id, content); // Crea il commento
-  };
+    fetchEditComment(id,content)
+  }
 
-  const fetchCreateComment = async (id, text) => {
+  const fetchEditComment = async (commentId, text) => {
     try {
-      const response = await fetch(`http://127.0.0.1:8000/api/anime/${id}/reviews`, {
-        method: "POST",
+      const response = await fetch(`http://127.0.0.1:8000/api/reviews/${commentId}/`, {
+        method: "PUT",
         headers: {
           "Content-Type": "application/json",
           Authorization: `Bearer ${takeToken}`,
@@ -33,17 +32,16 @@ const CreateComment = ({ id, fetchCommentList }) => {
 
       fetchCommentList(); 
 
-      setContent("");
+      setContent(content);
       return data;
     } catch (error) {
       console.error("Fetch error:", error);
       throw error;
     }
   };
-
   return (
     <Form onSubmit={handleSubmit}>
-      <h2>Write your comment here: </h2>
+      <h2>EDIT your comment here: </h2>
       <Form.Group className="mb-3" controlId="exampleForm.ControlTextarea1">
         
         <Form.Control
@@ -54,10 +52,9 @@ const CreateComment = ({ id, fetchCommentList }) => {
         />
       </Form.Group>
       <Button variant="primary" type="submit">
-        Add Comment
+        EDIT 
       </Button>
     </Form>
   );
-};
-
-export default CreateComment;
+}
+export default EditComment

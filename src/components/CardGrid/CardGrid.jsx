@@ -1,6 +1,8 @@
 import { useEffect, useState } from "react";
 import "./CardGrid.css";
 import { fetchAnimeList } from "../../services/animeListService";
+import CommentList from "../CommentList/CommentList";
+import CreateComment from "../CreateComment/CreateComment";
 
 const CardGrid = () => {
   const [showModal, setShowModal] = useState(false);
@@ -117,8 +119,8 @@ const [show, setShow]=useState(false)
                 <iframe
                   width="790"
                   height="568"
-                  src="https://www.youtube.com/embed/gcgKUcJKxIs"
-                  title="JUJUTSU KAISEN | OFFICIAL TRAILER"
+                  src={selectedContent.video_url}
+                  title={selectedContent.title}
                   frameBorder="0"
                   allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                   referrerPolicy="strict-origin-when-cross-origin"
@@ -126,6 +128,8 @@ const [show, setShow]=useState(false)
                 ></iframe>
               </div>
             )}
+            <CommentList id={selectedContent.id}/>
+            
           </div>
         </div>
       )}

@@ -56,7 +56,7 @@ const MySignIn = ({ setUser }) => {
           </form>
           <div className="help-text text-center">
             <p>
-              New to PopPlay? <a href="/signup">Sign up now</a>
+              New to PopPlay? <a href="/MySignUp">Sign up now</a>
             </p>
           </div>
         </main>

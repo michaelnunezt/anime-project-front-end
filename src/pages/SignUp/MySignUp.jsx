@@ -29,7 +29,7 @@ const MySignUp = ({ setUser }) => {
     try {
       const { user } = await signup(formData);
       setUser(user);
-      navigate("/MySignIn");
+      navigate("/");
     } catch (error) {
       console.error(error);
       updateMessage("Signup failed. Please try again.");
