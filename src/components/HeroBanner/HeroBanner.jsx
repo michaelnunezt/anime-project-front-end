@@ -7,9 +7,9 @@ const HeroBanner = () => {
       <Container className="text-center text-white">
         <h1>Dragon Ball Z</h1>
         <p>Suites you</p>
-        <Button variant="warning" size="lg">
+        {/* <Button variant="warning" size="lg">
           Play
-        </Button>
+        </Button> */}
       </Container>
     </div>
   );

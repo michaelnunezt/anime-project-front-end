@@ -3,33 +3,35 @@ import { Route, Routes, useNavigate } from "react-router-dom";
 import MySignIn from "./pages/SignIn/MySignIn";
 import MySignUp from "./pages/SignUp/MySignUp";
 import { getUser, removeToken } from "../utils/auth";
-import Dashboard from "./components/Dashboard/Dashboard";
 import Landing from "./components/Landing/Landing";
-import LandingNavBar from "./components/NavBar/LandingNavBar/LandingNavBar";
+import MyNavBar from "./components/NavBar/MyNavBar/MyNavBar"; // Import the authenticated navbar
+import LandingNavBar from "./components/NavBar/LandingNavBar/LandingNavBar"; // Import the landing navbar
 import MyList from "./components/MyList/MyList";
 import "./App.css";
 
 const App = () => {
   const [user, setUser] = useState(getUser());
-
   const navigate = useNavigate();
 
   const handleSignOut = () => {
+    console.log("");
+    
     removeToken();
     setUser(null);
     navigate("/");
+    
   };
-
+ console.log(user)
   return (
     <>
-      <LandingNavBar user={user} onSignOut={handleSignOut} /> {/* Add NavBar */}
+      {/* Render MyNavBar if user is logged in, else render LandingNavBar */}
+      {/* {user ? <LandingNavBar handleSignOut={handleSignOut} /> : <MyNavBar />} */}
+      <LandingNavBar user={user} handleSignOut={handleSignOut} />
       <Routes>
-        
         <Route path="/" element={<MySignIn setUser={setUser} />} />
         <Route path="/MySignUp" element={<MySignUp setUser={setUser} />} />
         <Route path="/Landing" element={<Landing user={user} />} />
         <Route path="/MyList/:id" element={<MyList />} />
-       
       </Routes>
     </>
   );

@@ -1,5 +1,9 @@
-
 #landing-page {
-  background-color: black; 
+  background-color: #000; /* Dark background */
   color: white;
+  min-height: 100vh; /* Ensure full height coverage */
+}
+
+#landing-page h2 {
+  color: white; /* Consistent text color for headings */
 }

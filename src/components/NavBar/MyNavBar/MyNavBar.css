@@ -1,7 +1,7 @@
 .custom-navbar {
-  background-color: rgba(0, 0, 0, 0.9); /* Dark background */
-  padding: 2rem 0; /* Space around the logo */
-  z-index: 1030; /* Ensure it stays above other elements */
+  background-color: rgba(0, 0, 0, 1); 
+  padding: 2rem 0; 
+  z-index: 1030; 
   position: fixed;
   top: 0;
   left: 0;
@@ -14,10 +14,10 @@
   font-weight: bold;
   color: orange;
   text-decoration: none;
-  padding-left: 10px; /* Add left padding if necessary */
+  padding-left: 10px; 
 
 }
 
 .navbar-brand:hover {
-  color: #FF640A; /* Subtle hover effect */
+  color: #FF640A; 
 }

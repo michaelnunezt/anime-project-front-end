@@ -1,65 +1,75 @@
-/* Scoped background for the SignUp page */
-#signup-page {
-  height: 100vh; /* Ensures the background covers the viewport */
+/* Body should take full height and cover the screen with the background image */
+body {
+  margin: 0;
+  padding: 0;
+  height: 100vh;
   background-image: url("/src/assets/images/login.png");
   background-size: cover;
-  background-position: 100% center;
+  background-position: center;
   background-repeat: no-repeat;
   display: flex;
-  align-items: center; /* Centers the content vertically */
-  justify-content: center; /* Centers the content horizontally */
+  flex-direction: column;
+  justify-content: space-between; /* Space navbar, form, and footer evenly */
+  align-items: center;
 }
 
-/* SignUp container styles */
+/* Center the content within the signup container */
 .signup-container {
   width: 100%;
   max-width: 470px;
   padding: 60px 68px 40px;
-  background-color: rgba(0, 0, 0, 0.9);
+  background-color: rgba(0, 0, 0, 0.9); /* Semi-transparent black background */
   color: #fff;
   box-sizing: border-box;
+  text-align: center; /* Center text in the container */
+  border-radius: 8px;
+  margin-top: 60px; /* Space from the top */
 }
 
+/* Title styling */
 .signup-container h1 {
   font-size: 32px;
-  font-weight: 700;
+  font-weight: bold;
   margin-bottom: 28px;
 }
 
+/* Form input and button styling */
 .signup-container form {
   display: flex;
   flex-direction: column;
+  gap: 20px;
 }
 
 .signup-container input {
   background: #333;
-  border: 0;
+  border: none;
   color: #fff;
-  height: 50px;
-  line-height: 50px;
-  padding: 16px 20px;
-  margin-bottom: 20px;
+  padding: 16px;
+  font-size: 16px;
+  border-radius: 4px;
 }
 
 .signup-container .signup-btn {
-  background: #FF640A;
-  font-weight: 700;
+  background: #ff640a;
+  font-weight: bold;
   border: none;
-  outline: none;
   padding: 16px;
   font-size: 16px;
-  cursor: pointer;
   color: #dacfcf;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background 0.3s ease-in-out;
 }
 
 .signup-container .signup-btn:hover {
-  background: #ff640a;
+  background: #e55b0a;
 }
 
+/* Help text styling */
 .signup-container .help-text {
-  color: #fff;
+  margin-top: 142px;
   font-size: 13px;
-  margin-top: 24px;
+  color: #fff;
 }
 
 .signup-container .help-text a {
@@ -71,6 +81,12 @@
   text-decoration: underline;
 }
 
-.text-center {
+/* Footer styling */
+.footer {
+  width: 100%;
   text-align: center;
+  padding: 20px;
+  color: #fff;
+  background: rgba(0, 0, 0, 0.8);
 }
+
