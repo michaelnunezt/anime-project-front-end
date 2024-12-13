@@ -10,7 +10,7 @@
   top: 0;
   left: 0;
   width: 100%;
-  z-index: 100; /* Ensure it's below MyNavBar */
+  z-index: 100; 
 }
 
 .landing-navbar .logo {
@@ -26,13 +26,9 @@
 }
 
 .landing-navbar .nav-links a {
-  color: white;
+  color: orange;
   text-decoration: none;
   font-size: 22px;
-}
-
-.landing-navbar .nav-links a:hover {
-  color: orange;
 }
 
 .landing-navbar .search-container {
@@ -48,61 +44,9 @@
   outline: none;
 }
 
-.landing-navbar .search-button {
-  padding: 10px;
-  background-color: orange;
-  color: black;
-  border: none;
-  border-radius: 10px;
-  cursor: pointer;
-}
-
-.landing-navbar .search-button:hover {
-  background-color: darkorange;
-}
-
-.landing-navbar .user-section {
-  color: white;
-  margin-right: 20px;
-}
-
 .landing-navbar .logout {
   color: orange;
   text-decoration: none;
   margin-left: 10px;
   cursor: pointer;
-}
-
-.landing-navbar .logout:hover {
-  color: red;
-}
-
-/* Dropdown menu styles */
-.dropdown {
-  position: relative;
-  display: inline-block;
-}
-
-.dropdown-menu {
-  display: none;
-  position: absolute;
-  background-color: black;
-  min-width: 160px;
-  z-index: 1000;
-  padding: 10px 0;
-}
-
-.dropdown-menu a {
-  color: white;
-  padding: 12px 16px;
-  text-decoration: none;
-  display: block;
-}
-
-.dropdown-menu a:hover {
-  background-color: gray;
-}
-
-.dropdown .dropdown-menu {
-  display: block;
 }

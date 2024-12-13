@@ -15,15 +15,15 @@ body {
 
 /* Center the content within the signup container */
 .signup-container {
-  width: 100%;
-  max-width: 470px;
-  padding: 60px 68px 40px;
+  width: 105%;
+  max-width: 370px;
+  padding: 60px 68px 45px;
   background-color: rgba(0, 0, 0, 0.9); /* Semi-transparent black background */
   color: #fff;
   box-sizing: border-box;
   text-align: center; /* Center text in the container */
-  border-radius: 8px;
-  margin-top: 60px; /* Space from the top */
+  border-radius: 30px;
+  margin-top: 61px; /* Space from the top */
 }
 
 /* Title styling */
@@ -83,7 +83,7 @@ body {
 
 /* Footer styling */
 .footer {
-  width: 100%;
+  width: 255%;
   text-align: center;
   padding: 20px;
   color: #fff;

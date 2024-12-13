@@ -24,8 +24,6 @@ const App = () => {
  console.log(user)
   return (
     <>
-      {/* Render MyNavBar if user is logged in, else render LandingNavBar */}
-      {/* {user ? <LandingNavBar handleSignOut={handleSignOut} /> : <MyNavBar />} */}
       <LandingNavBar user={user} handleSignOut={handleSignOut} />
       <Routes>
         <Route path="/" element={<MySignIn setUser={setUser} />} />

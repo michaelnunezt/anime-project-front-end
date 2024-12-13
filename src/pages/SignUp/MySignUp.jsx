@@ -1,9 +1,9 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { signup } from "../../services/userService";
-import "./MySignUp.css";
 import MyFooter from "../../components/Footer/MyFooter";
 import MyNavBar from "../../components/NavBar/MyNavBar/MyNavBar";
+import "./MySignUp.css";
 
 const MySignUp = ({ setUser }) => {
   const navigate = useNavigate();
@@ -24,7 +24,7 @@ const MySignUp = ({ setUser }) => {
     try {
       const { user } = await signup(formData);
       setUser(user);
-      navigate("/");
+      navigate("/Landing");
     } catch (error) {
       setMessage("Signup failed. Please try again.");
     }
@@ -32,10 +32,7 @@ const MySignUp = ({ setUser }) => {
 
   return (
     <div>
-      {/* Centered Navbar */}
       <MyNavBar />
-
-      {/* Centered Signup Form */}
       <div className="signup-container">
         <h1>Sign Up</h1>
         {message && <p style={{ color: "red" }}>{message}</p>}
@@ -65,12 +62,10 @@ const MySignUp = ({ setUser }) => {
         </form>
         <div className="help-text">
           <p>
-            Already have an account? <a href="/MySignIn">Login</a>
+            Already have an account? <a href="/">Sign In</a>
           </p>
         </div>
       </div>
-
-      {/* Footer */}
       <MyFooter />
     </div>
   );

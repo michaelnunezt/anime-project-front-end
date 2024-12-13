@@ -13,7 +13,7 @@ console.log("risposta",data);
 
   // Set the token to local storage
   if(data.status) {
-    alert("Registration was successful. Please log in to continue.")
+    alert("Registration was successful")
   }
   return data
 }

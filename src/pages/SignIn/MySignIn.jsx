@@ -1,9 +1,9 @@
 import { useState } from "react";
 import { signIn } from "../../services/userService";
 import { useNavigate } from "react-router-dom";
-import './MySignIn.css';
 import MyFooter from "../../components/Footer/MyFooter";
 import MyNavBar from "../../components/NavBar/MyNavBar/MyNavBar";
+import './MySignIn.css';
 
 const MySignIn = ({ setUser }) => {
   const navigate = useNavigate();

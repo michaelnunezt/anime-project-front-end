@@ -1,36 +1,29 @@
-import './LandingNavBar.css';  // Make sure this CSS is imported
+import { Link } from "react-router-dom";
+import './LandingNavBar.css';
 
 const LandingNavBar = (props) => {
   console.log(props);
-  
 
   return (
     <nav className="landing-navbar">
       <div className="logo">
-        <a href="/Landing">PopPlay</a>
+        <span>PopPlay</span>
       </div>
-
       <div className="nav-links">
-        <a href="/Landing">Home</a>
-        <a href="/MySignUp">Sign Up</a>
-        <a href="/MySignIn">Sign In</a>
-      </div>
-
-      <div className="search-container">
-        <input
-          type="text"
-          className="search-input"
-          placeholder="Search..."
-        />
-        <button className="search-button">Search</button>
-      </div>
-
-      <div className="user-section">
-        <a href="/" className="logout">Profile</a>
-        <button onClick={()=> props.handleSignOut()}>Log out</button>
+        <Link to="/Landing">Home</Link> {/* Styled Link */}
+        <a
+          className="logout"
+          onClick={(e) => {
+            e.preventDefault(); // Prevent the default link behavior
+            props.handleSignOut(); // Call the sign-out function
+          }}
+        >
+          Log out
+        </a> {/* Styled logout link */}
       </div>
     </nav>
   );
 };
 
 export default LandingNavBar;
+

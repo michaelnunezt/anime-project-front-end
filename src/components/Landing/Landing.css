@@ -1,9 +1,18 @@
 #landing-page {
-  background-color: #000; /* Dark background */
+  background-color: #000;
   color: white;
-  min-height: 100vh; /* Ensure full height coverage */
+  min-height: 100vh;
+  display: flex; /* For better alignment */
+  flex-direction: column; /* Stacks items vertically */
+  align-items: center; /* Center items horizontally */
+  padding: 170px; /* Add spacing inside the container */
+  box-sizing: border-box; /* Include padding in dimensions */ /* Ensure full height coverage */
 }
 
 #landing-page h2 {
   color: white; /* Consistent text color for headings */
+}
+.my-5 {
+  margin-top: 3rem !important;
+  margin-bottom: -9rem !important;
 }

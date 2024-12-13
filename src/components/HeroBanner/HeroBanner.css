@@ -1,29 +1,49 @@
 .hero-banner {
-  background-size: cover;
-  background-position: center;
-  background-image: url('/src/assets/images/Goku.jpg');
-  padding: 100px 55px;
-  color: rgb(30, 28, 26);
-  width: 100%;
-}
-.hero-content {
-  max-width: 600px; /* Limit content width to prevent stretching */
-  text-align: start; /* Align the text to the left */
-}
-
-.hero-content h1 {
-  font-size: 3rem; /* Adjust title size */
-  margin-bottom: 20px; /* Space below the title */
+  position: relative;
+    height: 57vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    background-image: url(https://animetalkie.com/wp-content/uploads/2024/10/WhatsApp-Image-2024-10-16-at-9.30.49-AM.webp);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    color: white;
+    margin-top: -47px;
+    width: 1215px;
 }
 
-.hero-content p {
-  font-size: 1.5rem; /* Adjust description size */
-  margin-bottom: 20px; /* Space below the paragraph */
-  
+.text-content {
+  z-index: 1; /* Ensure the text is above the background */
+  background-color: rgba(0, 0, 0, 0.8);
+  margin-top: 342px;
 }
 
-.hero-content .btn {
-  padding: 10px 30px; /* Button padding */
-  font-size: 1.2rem; /* Adjust button font size */
-  background-color: #ff640a;
+.video-modal .modal-content {
+  background-color: #000; /* Modal background color */
+  color: #fff; /* Text color */
+  margin-top: 1px;
+}
+
+.video-wrapper iframe {
+  border: none; /* Remove iframe border */
+}
+
+.btn-success {
+  --bs-btn-color: #fff;
+  --bs-btn-bg: #ff640a;
+  --bs-btn-border-color: orange;
+  --bs-btn-hover-color: #fff;
+  --bs-btn-hover-bg: orange;
+  --bs-btn-hover-border-color: orange;
+  --bs-btn-focus-shadow-rgb: 60, 153, 110;
+  --bs-btn-active-color: #fff;
+  --bs-btn-active-bg: orange;
+  --bs-btn-active-border-color: orange;
+  --bs-btn-active-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
+  --bs-btn-disabled-color: #fff;
+  --bs-btn-disabled-bg: orange;
+  --bs-btn-disabled-border-color: orange;
+  border: var(--bs-btn-border-width) solid #ff640a;
 }
